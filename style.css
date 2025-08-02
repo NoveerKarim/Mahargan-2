@@ -11,7 +11,9 @@ body {
   background: #1d4276;
   direction: rtl;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 10px 20px;
+  gap: 15px;
+  flex-shrink: 0;
 }
 
 .Logo img {
@@ -24,12 +26,14 @@ body {
 .Sections {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  gap: 20px;
+  flex-wrap: wrap;
   color: white;
-  margin: 0 100px 0 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 18px;
   padding: 8px 12px;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
 .Sections img {
@@ -243,7 +247,6 @@ body {
 
 .homepage-banner .buttons a:hover {
   background-color: #4a6891;
-  
 }
 
 .quiz-container {
@@ -309,7 +312,10 @@ input[type="radio"]:checked + label.correct {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 20px;
-  padding: 0 20px;
+  padding: 20px;
+  border: grey 2px solid;
+  border-radius: 10px;
+  background-color: white;
   box-sizing: border-box;
 }
 
@@ -321,32 +327,67 @@ input[type="radio"]:checked + label.correct {
 }
 
 /* Enhanced Responsive Design */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .Sections {
-    margin: 0 50px 0 25px;
-    font-size: 14px;
+    font-size: 16px;
+    gap: 15px;
   }
-  
+
+  .text-right,
+  .text-left {
+    width: 480px;
+  }
+
+  .image-left img,
+  .image-right img {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .Sections {
+    font-size: 14px;
+    gap: 10px;
+    padding: 6px 10px;
+  }
+
   .Sections img {
     width: 80px;
   }
-  
+
   .text-right,
   .text-left {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
+    margin: 10px;
   }
-  
+
   .image-left img,
   .image-right img {
     width: 350px;
     margin: 20px auto;
   }
-  
+
   .information-1,
   .information-2 {
     width: 45%;
-    min-width: 350px;
+    min-width: 320px;
+    height: auto;
+    min-height: 200px;
+  }
+
+  .homepage-banner h2,
+  .homepage-banner h1 {
+    font-size: 28px;
+  }
+
+  .Logo-Image img {
+    width: 380px;
   }
 }
 
@@ -355,7 +396,7 @@ input[type="radio"]:checked + label.correct {
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    gap: 10px;
+    gap: 15px;
   }
 
   .Logo img {
@@ -365,110 +406,135 @@ input[type="radio"]:checked + label.correct {
   }
 
   .Sections {
-    margin: 5px 10px;
+    margin: 5px;
     padding: 8px 15px;
     font-size: 14px;
     flex-wrap: wrap;
     justify-content: center;
+    width: auto;
   }
 
   .Sections img {
     width: 60px;
   }
 
+  .homepage-banner {
+    padding: 40px 20px;
+  }
+
   .homepage-banner h2,
   .homepage-banner h1 {
     font-size: 24px;
+    line-height: 1.3;
   }
 
-  .homepage-banner {
-    padding: 30px 15px;
+  .homepage-banner .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .homepage-banner .buttons a {
     display: block;
-    margin: 10px auto;
-    max-width: 250px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 
   .Logo-Image img {
-    width: 300px;
+    width: 320px;
   }
 
   .section,
   .section-reverse {
     flex-direction: column;
     text-align: center;
-    padding: 15px;
+    padding: 20px 15px;
+    gap: 25px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
     width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .text-right,
   .text-left {
     width: 100%;
-    margin: 10px auto;
+    margin: 0;
     padding: 0 10px;
+    max-width: none;
   }
 
   .information {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
+    gap: 15px;
   }
 
   .information-1,
   .information-2 {
     width: 100%;
-    margin: 10px auto;
+    margin: 0;
     min-width: auto;
     height: auto;
-    min-height: 200px;
+    min-height: 180px;
+    padding: 20px;
+  }
+
+  .footer {
+    padding: 20px 15px;
+    min-height: 15vh;
   }
 
   .footer h1 {
     font-size: 16px;
-    padding: 10px;
+    line-height: 1.4;
   }
 
   .quiz-container {
-    margin: 10px;
-    padding: 15px;
-    max-width: 95%;
+    margin: 15px;
+    padding: 20px;
+    max-width: calc(100% - 30px);
   }
 
   .quiz-container h1 {
-    font-size: 24px;
+    font-size: 22px;
+    line-height: 1.3;
   }
 
   .question-box {
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
   }
 
   .question-box p {
     font-size: 16px;
+    line-height: 1.4;
   }
 
   label {
     padding: 12px;
     font-size: 14px;
+    line-height: 1.3;
   }
 
   .text-center {
     font-size: 18px;
-    padding: 0 15px;
+    padding: 20px 15px;
+    margin: 15px auto;
+    max-width: calc(100% - 30px);
   }
 }
 
 @media screen and (max-width: 480px) {
   .header {
-    padding: 10px;
+    padding: 12px;
+    gap: 12px;
   }
 
   .Logo img {
@@ -478,37 +544,51 @@ input[type="radio"]:checked + label.correct {
   }
 
   .Sections {
-    margin: 5px;
+    margin: 3px;
     padding: 6px 10px;
     font-size: 12px;
+    gap: 8px;
   }
 
   .Sections img {
     width: 50px;
   }
 
+  .homepage-banner {
+    padding: 30px 15px;
+  }
+
   .homepage-banner h2,
   .homepage-banner h1 {
     font-size: 20px;
+    line-height: 1.2;
   }
 
   .homepage-banner p {
     font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .homepage-banner .buttons a {
+    padding: 10px 20px;
+    font-size: 14px;
+    max-width: 280px;
   }
 
   .Logo-Image img {
-    width: 250px;
+    width: 280px;
   }
 
   .section,
   .section-reverse {
-    padding: 10px;
+    padding: 15px 10px;
+    gap: 20px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
-    max-width: 250px;
+    max-width: 280px;
   }
 
   .text-right,
@@ -516,78 +596,249 @@ input[type="radio"]:checked + label.correct {
     padding: 0 5px;
   }
 
-  .footer h1 {
+  .text-right h2,
+  .text-left h2 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .text-right p,
+  .text-left p {
     font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .information {
+    padding: 10px;
   }
 
   .information-1,
   .information-2 {
-    height: auto;
     padding: 15px;
     min-height: 150px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .footer h1 {
+    font-size: 14px;
+    line-height: 1.3;
   }
 
   .quiz-container {
-    margin: 5px;
-    padding: 10px;
+    margin: 10px;
+    padding: 15px;
+    max-width: calc(100% - 20px);
   }
 
   .quiz-container h1 {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.2;
   }
 
   .question-box {
-    padding: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
   }
 
   .question-box p {
     font-size: 14px;
+    line-height: 1.3;
   }
 
   label {
-    padding: 8px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.3;
   }
 
   .text-center {
     font-size: 16px;
-    padding: 0 10px;
+    padding: 15px 10px;
+    margin: 10px;
+    max-width: calc(100% - 20px);
   }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 360px) {
   .header {
-    padding: 8px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .Logo img {
+    width: 35%;
+    min-width: 70px;
+    max-width: 90px;
   }
 
   .Sections {
     font-size: 11px;
-    padding: 4px 8px;
+    padding: 5px 8px;
+    gap: 5px;
   }
 
   .Sections img {
-    width: 40px;
+    width: 45px;
   }
 
   .homepage-banner {
-    padding: 20px 10px;
+    padding: 25px 10px;
   }
 
   .homepage-banner h2,
   .homepage-banner h1 {
     font-size: 18px;
+    line-height: 1.2;
   }
 
   .homepage-banner p {
     font-size: 14px;
+    line-height: 1.3;
   }
 
-  .text-center {
-    font-size: 14px;
+  .homepage-banner .buttons a {
+    padding: 8px 16px;
+    font-size: 13px;
+    max-width: 250px;
+  }
+
+  .Logo-Image img {
+    width: 240px;
+  }
+
+  .section,
+  .section-reverse {
+    padding: 12px 8px;
+    gap: 15px;
+  }
+
+  .image-left img,
+  .image-right img,
+  .toba {
+    max-width: 240px;
+  }
+
+  .text-right h2,
+  .text-left h2 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .text-right p,
+  .text-left p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .information-1,
+  .information-2 {
+    padding: 12px;
+    min-height: 120px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .footer {
+    padding: 15px 8px;
   }
 
   .footer h1 {
     font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .quiz-container {
+    margin: 8px;
+    padding: 12px;
+    max-width: calc(100% - 16px);
+  }
+
+  .quiz-container h1 {
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  .question-box {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .question-box p {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  label {
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .text-center {
+    font-size: 14px;
+    padding: 12px 8px;
+    margin: 8px;
+    max-width: calc(100% - 16px);
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .homepage-banner h2,
+  .homepage-banner h1 {
+    font-size: 16px;
+  }
+
+  .homepage-banner p {
+    font-size: 13px;
+  }
+
+  .Logo-Image img {
+    width: 200px;
+  }
+
+  .image-left img,
+  .image-right img,
+  .toba {
+    max-width: 200px;
+  }
+
+  .text-right h2,
+  .text-left h2 {
+    font-size: 15px;
+  }
+
+  .text-right p,
+  .text-left p {
+    font-size: 12px;
+  }
+
+  .information-1,
+  .information-2 {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .footer h1 {
+    font-size: 11px;
+  }
+
+  .quiz-container h1 {
+    font-size: 15px;
+  }
+
+  .question-box p {
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 11px;
+    padding: 7px;
+  }
+
+  .text-center {
+    font-size: 13px;
   }
 }
