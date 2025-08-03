@@ -119,19 +119,16 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  max-width: 580px;
-  height: auto;
-  min-height: 240px;
+  width: 580px;
+  height: 340px;
   border-radius: 30px;
   background-color: wheat;
-  padding: 20px;
+  padding: 15px;
+  max-width: 100%;
   box-sizing: border-box;
   flex: 1;
   min-width: 280px;
   font-size: 20px;
-  flex-wrap: wrap;
-  text-align: center;
 }
 
 .footer {
@@ -399,19 +396,24 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Tablet Landscape - 768px to 1024px */
+/* Tablet Landscape - 768px to 1024px - HEADER BECOMES VERTICAL */
 @media screen and (max-width: 1024px) {
   .header {
+    flex-direction: column;
     padding: 15px;
-    gap: 10px;
-    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
   }
 
   .Sections {
     font-size: 15px;
     gap: 10px;
-    padding: 8px 12px;
-    min-width: 140px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    margin: 5px 0;
   }
 
   .Sections img {
@@ -462,7 +464,7 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Tablet Portrait - 768px */
+/* Tablet Portrait - 768px - HEADER REMAINS VERTICAL */
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -604,9 +606,10 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Mobile Large - 480px */
+/* Mobile Large - 480px - HEADER REMAINS VERTICAL */
 @media screen and (max-width: 480px) {
   .header {
+    flex-direction: column;
     padding: 12px;
     gap: 8px;
   }
@@ -733,9 +736,10 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Mobile Small - 360px */
+/* Mobile Small - 360px - HEADER REMAINS VERTICAL */
 @media screen and (max-width: 360px) {
   .header {
+    flex-direction: column;
     padding: 10px;
     gap: 6px;
   }
@@ -858,9 +862,10 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Mobile Extra Small - 320px */
+/* Mobile Extra Small - 320px - HEADER REMAINS VERTICAL */
 @media screen and (max-width: 320px) {
   .header {
+    flex-direction: column;
     padding: 8px;
     gap: 4px;
   }
