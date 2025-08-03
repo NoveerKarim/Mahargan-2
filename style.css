@@ -310,7 +310,7 @@ input[type="radio"]:checked + label.correct {
   font-size: 20px;
   padding: 20px;
   border: grey 2px solid;
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: white;
   box-sizing: border-box;
 }
@@ -1228,3 +1228,4 @@ input[type="radio"]:checked + label.correct {
     font-size: 15px;
   }
 }
+
