@@ -54,6 +54,7 @@ body {
   flex-wrap: wrap;
   padding: 20px;
   gap: 20px;
+  font-size: 25px;
 }
 
 .image-left img {
@@ -70,6 +71,7 @@ body {
   max-width: 100%;
   flex: 1;
   min-width: 300px;
+  
 }
 
 .section-reverse {
@@ -80,6 +82,7 @@ body {
   flex-wrap: wrap;
   padding: 20px;
   gap: 20px;
+  font-size: 25px;
 }
 
 .image-right img {
@@ -109,6 +112,7 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  font-size: 20px;
 }
 
 .information-1,
@@ -125,6 +129,7 @@ body {
   box-sizing: border-box;
   flex: 1;
   min-width: 280px;
+   font-size: 20px;
 }
 
 .footer {
@@ -958,4 +963,3 @@ input[type="radio"]:checked + label.correct {
     margin: 0 auto;
   }
 }
-
