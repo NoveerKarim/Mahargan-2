@@ -2,6 +2,7 @@ body {
   margin: 0;
   direction: rtl;
   font-family: "Playpen Sans Arabic", sans-serif;
+  overflow-x: hidden;
 }
 
 .header {
@@ -14,6 +15,8 @@ body {
   padding: 10px 20px;
   gap: 15px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 100;
 }
 
 .Logo img {
@@ -30,21 +33,17 @@ body {
   flex-wrap: wrap;
   color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
   font-size: 18px;
   padding: 8px 12px;
   border-radius: 8px;
+}
+.Sections:hover {
+  background-color: #4a6891;4+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }
 
 .Sections img {
   width: 100px;
   height: auto;
-}
-
-.Sections:hover {
-  background-color: #4a6891;
-  border-radius: 10px;
-  margin-bottom: 12px;
 }
 
 .section {
@@ -188,7 +187,6 @@ body {
   border-radius: 8px;
   background-color: #eee;
   cursor: pointer;
-  transition: background 0.3s ease;
   border: 1px solid transparent;
 }
 
@@ -242,11 +240,6 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.3s;
-}
-
-.homepage-banner .buttons a:hover {
-  background-color: #4a6891;
 }
 
 .quiz-container {
@@ -290,7 +283,6 @@ label {
   margin: 5px 0;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
 }
 
 input[type="radio"]:checked + label {
@@ -396,26 +388,31 @@ input[type="radio"]:checked + label.correct {
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    gap: 15px;
+    gap: 10px;
   }
 
   .Logo img {
     width: 25%;
     min-width: 100px;
     max-width: 120px;
+    margin-bottom: 10px;
   }
 
   .Sections {
-    margin: 5px;
-    padding: 8px 15px;
+    margin: 3px 0;
+    padding: 10px 15px;
     font-size: 14px;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 300px;
     justify-content: center;
-    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
 
   .Sections img {
-    width: 60px;
+    width: 50px;
+    margin-left: 10px;
   }
 
   .homepage-banner {
@@ -534,24 +531,38 @@ input[type="radio"]:checked + label.correct {
 @media screen and (max-width: 480px) {
   .header {
     padding: 12px;
-    gap: 12px;
+    gap: 8px;
   }
 
   .Logo img {
     width: 30%;
     min-width: 80px;
     max-width: 100px;
+    margin-bottom: 15px;
   }
 
   .Sections {
-    margin: 3px;
-    padding: 6px 10px;
-    font-size: 12px;
-    gap: 8px;
+    margin: 2px 0;
+    padding: 12px 20px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+    display: block;
   }
 
   .Sections img {
-    width: 50px;
+    width: 40px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .Sections p {
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
   }
 
   .homepage-banner {
@@ -664,23 +675,36 @@ input[type="radio"]:checked + label.correct {
 @media screen and (max-width: 360px) {
   .header {
     padding: 10px;
-    gap: 10px;
+    gap: 5px;
   }
 
   .Logo img {
     width: 35%;
     min-width: 70px;
     max-width: 90px;
+    margin-bottom: 10px;
   }
 
   .Sections {
-    font-size: 11px;
-    padding: 5px 8px;
-    gap: 5px;
+    font-size: 12px;
+    padding: 10px 15px;
+    margin: 2px 0;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    display: block;
   }
 
   .Sections img {
-    width: 45px;
+    width: 35px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  .Sections p {
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
   }
 
   .homepage-banner {
@@ -786,6 +810,37 @@ input[type="radio"]:checked + label.correct {
 
 /* Very small screens */
 @media screen and (max-width: 320px) {
+  .header {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .Logo img {
+    margin-bottom: 8px;
+  }
+
+  .Sections {
+    font-size: 11px;
+    padding: 8px 12px;
+    margin: 1px 0;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    display: block;
+  }
+
+  .Sections img {
+    width: 30px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+
+  .Sections p {
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+  }
+
   .homepage-banner h2,
   .homepage-banner h1 {
     font-size: 16px;
@@ -840,5 +895,66 @@ input[type="radio"]:checked + label.correct {
 
   .text-center {
     font-size: 13px;
+  }
+}
+/* Enhanced Responsive Design for Tablets and iPads */
+@media screen and (max-width: 1200px) {
+  .Sections {
+    font-size: 16px;
+    gap: 15px;
+  }
+
+  .text-right,
+  .text-left {
+    width: 480px;
+  }
+
+  .image-left img,
+  .image-right img {
+    width: 380px;
+  }
+}
+
+/* iPad Pro and Large Tablets */
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .section,
+  .section-reverse {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .text-right,
+  .text-left {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .image-left img,
+  .image-right img {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+  }
+
+  .information {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .information-1,
+  .information-2 {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
