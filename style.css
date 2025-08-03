@@ -71,7 +71,6 @@ body {
   max-width: 100%;
   flex: 1;
   min-width: 300px;
-  
 }
 
 .section-reverse {
@@ -120,16 +119,19 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 580px;
-  height: 240px;
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  min-height: 240px;
   border-radius: 30px;
   background-color: wheat;
-  padding: 15px;
-  max-width: 100%;
+  padding: 20px;
   box-sizing: border-box;
   flex: 1;
   min-width: 280px;
-   font-size: 20px;
+  font-size: 20px;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .footer {
@@ -323,11 +325,61 @@ input[type="radio"]:checked + label.correct {
   max-width: 100%;
 }
 
-/* Enhanced Responsive Design */
+/* RESPONSIVE DESIGN */
+
+/* Large Desktop - 1440px and up */
+@media screen and (min-width: 1441px) {
+  .section,
+  .section-reverse {
+    font-size: 28px;
+  }
+  
+  .text-right,
+  .text-left {
+    width: 600px;
+  }
+  
+  .image-left img,
+  .image-right img {
+    width: 450px;
+  }
+}
+
+/* Desktop - 1200px to 1440px */
+@media screen and (max-width: 1440px) {
+  .section,
+  .section-reverse {
+    font-size: 24px;
+  }
+  
+  .text-right,
+  .text-left {
+    width: 520px;
+  }
+  
+  .image-left img,
+  .image-right img {
+    width: 400px;
+  }
+}
+
+/* Small Desktop - 1024px to 1200px */
 @media screen and (max-width: 1200px) {
+  .header {
+    padding: 15px 20px;
+    gap: 12px;
+  }
+
   .Sections {
     font-size: 16px;
     gap: 15px;
+    padding: 8px 12px;
+  }
+
+  .section,
+  .section-reverse {
+    font-size: 22px;
+    padding: 25px 20px;
   }
 
   .text-right,
@@ -339,29 +391,45 @@ input[type="radio"]:checked + label.correct {
   .image-right img {
     width: 380px;
   }
+
+  .information-1,
+  .information-2 {
+    width: 520px;
+    font-size: 18px;
+  }
 }
 
+/* Tablet Landscape - 768px to 1024px */
 @media screen and (max-width: 1024px) {
   .header {
     padding: 15px;
     gap: 10px;
+    justify-content: center;
   }
 
   .Sections {
-    font-size: 14px;
+    font-size: 15px;
     gap: 10px;
-    padding: 6px 10px;
+    padding: 8px 12px;
+    min-width: 140px;
   }
 
   .Sections img {
-    width: 80px;
+    width: 70px;
+  }
+
+  .section,
+  .section-reverse {
+    font-size: 20px;
+    padding: 25px 15px;
+    gap: 25px;
   }
 
   .text-right,
   .text-left {
     width: 100%;
-    max-width: 450px;
-    margin: 10px;
+    max-width: 480px;
+    margin: 10px auto;
   }
 
   .image-left img,
@@ -370,12 +438,18 @@ input[type="radio"]:checked + label.correct {
     margin: 20px auto;
   }
 
+  .information {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .information-1,
   .information-2 {
-    width: 45%;
-    min-width: 320px;
+    width: 90%;
+    max-width: 500px;
     height: auto;
-    min-height: 200px;
+    min-height: 180px;
+    margin: 0 auto;
   }
 
   .homepage-banner h2,
@@ -384,44 +458,40 @@ input[type="radio"]:checked + label.correct {
   }
 
   .Logo-Image img {
-    width: 380px;
+    width: 350px;
   }
 }
 
+/* Tablet Portrait - 768px */
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
     text-align: center;
     padding: 15px;
-    gap: 10px;
+    gap: 12px;
   }
 
   .Logo img {
-    width: 25%;
-    min-width: 100px;
-    max-width: 120px;
+    width: 120px;
     margin-bottom: 10px;
   }
 
   .Sections {
-    margin: 3px 0;
-    padding: 10px 15px;
+    margin: 5px 0;
+    padding: 12px 20px;
     font-size: 14px;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
-    display: flex;
-    align-items: center;
-    text-align: center;
   }
 
   .Sections img {
     width: 50px;
-    margin-left: 10px;
+    margin-left: 8px;
   }
 
   .homepage-banner {
-    padding: 40px 20px;
+    padding: 30px 15px;
   }
 
   .homepage-banner h2,
@@ -440,12 +510,12 @@ input[type="radio"]:checked + label.correct {
   .homepage-banner .buttons a {
     display: block;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     text-align: center;
   }
 
   .Logo-Image img {
-    width: 320px;
+    width: 300px;
   }
 
   .section,
@@ -453,15 +523,16 @@ input[type="radio"]:checked + label.correct {
     flex-direction: column;
     text-align: center;
     padding: 20px 15px;
-    gap: 25px;
+    gap: 20px;
+    font-size: 18px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
     width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
+    max-width: 300px;
+    margin: 10px auto;
   }
 
   .text-right,
@@ -473,7 +544,6 @@ input[type="radio"]:checked + label.correct {
   }
 
   .information {
-    flex-direction: column;
     padding: 15px;
     gap: 15px;
   }
@@ -484,8 +554,9 @@ input[type="radio"]:checked + label.correct {
     margin: 0;
     min-width: auto;
     height: auto;
-    min-height: 180px;
+    min-height: 160px;
     padding: 20px;
+    font-size: 16px;
   }
 
   .footer {
@@ -505,13 +576,13 @@ input[type="radio"]:checked + label.correct {
   }
 
   .quiz-container h1 {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.3;
   }
 
   .question-box {
-    padding: 20px;
-    margin-bottom: 25px;
+    padding: 18px;
+    margin-bottom: 20px;
   }
 
   .question-box p {
@@ -527,12 +598,13 @@ input[type="radio"]:checked + label.correct {
 
   .text-center {
     font-size: 18px;
-    padding: 20px 15px;
+    padding: 18px 15px;
     margin: 15px auto;
     max-width: calc(100% - 30px);
   }
 }
 
+/* Mobile Large - 480px */
 @media screen and (max-width: 480px) {
   .header {
     padding: 12px;
@@ -540,38 +612,24 @@ input[type="radio"]:checked + label.correct {
   }
 
   .Logo img {
-    width: 30%;
-    min-width: 80px;
-    max-width: 100px;
-    margin-bottom: 15px;
+    width: 100px;
+    margin-bottom: 8px;
   }
 
   .Sections {
-    margin: 2px 0;
-    padding: 12px 20px;
+    margin: 3px 0;
+    padding: 10px 15px;
     font-size: 13px;
-    width: 100%;
-    max-width: 280px;
-    border-radius: 8px;
-    justify-content: center;
-    text-align: center;
-    display: block;
+    max-width: 250px;
   }
 
   .Sections img {
     width: 40px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  .Sections p {
-    margin: 0;
-    display: inline;
-    vertical-align: middle;
+    margin-left: 6px;
   }
 
   .homepage-banner {
-    padding: 30px 15px;
+    padding: 25px 12px;
   }
 
   .homepage-banner h2,
@@ -582,34 +640,29 @@ input[type="radio"]:checked + label.correct {
 
   .homepage-banner p {
     font-size: 16px;
-    line-height: 1.4;
   }
 
   .homepage-banner .buttons a {
-    padding: 10px 20px;
-    font-size: 14px;
-    max-width: 280px;
+    padding: 10px 18px;
+    font-size: 13px;
+    max-width: 250px;
   }
 
   .Logo-Image img {
-    width: 280px;
+    width: 250px;
   }
 
   .section,
   .section-reverse {
     padding: 15px 10px;
-    gap: 20px;
+    gap: 15px;
+    font-size: 16px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
-    max-width: 280px;
-  }
-
-  .text-right,
-  .text-left {
-    padding: 0 5px;
+    max-width: 250px;
   }
 
   .text-right h2,
@@ -625,15 +678,19 @@ input[type="radio"]:checked + label.correct {
   }
 
   .information {
-    padding: 10px;
+    padding: 12px;
   }
 
   .information-1,
   .information-2 {
     padding: 15px;
-    min-height: 150px;
+    min-height: 140px;
     font-size: 14px;
     line-height: 1.4;
+  }
+
+  .footer {
+    padding: 15px 10px;
   }
 
   .footer h1 {
@@ -654,7 +711,7 @@ input[type="radio"]:checked + label.correct {
 
   .question-box {
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .question-box p {
@@ -676,44 +733,32 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Extra small devices */
+/* Mobile Small - 360px */
 @media screen and (max-width: 360px) {
   .header {
     padding: 10px;
-    gap: 5px;
+    gap: 6px;
   }
 
   .Logo img {
-    width: 35%;
-    min-width: 70px;
-    max-width: 90px;
-    margin-bottom: 10px;
+    width: 80px;
+    margin-bottom: 6px;
   }
 
   .Sections {
     font-size: 12px;
-    padding: 10px 15px;
+    padding: 8px 12px;
     margin: 2px 0;
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    display: block;
+    max-width: 220px;
   }
 
   .Sections img {
     width: 35px;
     margin-left: 5px;
-    vertical-align: middle;
-  }
-
-  .Sections p {
-    margin: 0;
-    display: inline;
-    vertical-align: middle;
   }
 
   .homepage-banner {
-    padding: 25px 10px;
+    padding: 20px 8px;
   }
 
   .homepage-banner h2,
@@ -724,29 +769,29 @@ input[type="radio"]:checked + label.correct {
 
   .homepage-banner p {
     font-size: 14px;
-    line-height: 1.3;
   }
 
   .homepage-banner .buttons a {
-    padding: 8px 16px;
-    font-size: 13px;
-    max-width: 250px;
+    padding: 8px 15px;
+    font-size: 12px;
+    max-width: 220px;
   }
 
   .Logo-Image img {
-    width: 240px;
+    width: 200px;
   }
 
   .section,
   .section-reverse {
     padding: 12px 8px;
-    gap: 15px;
+    gap: 12px;
+    font-size: 14px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
-    max-width: 240px;
+    max-width: 200px;
   }
 
   .text-right h2,
@@ -770,7 +815,7 @@ input[type="radio"]:checked + label.correct {
   }
 
   .footer {
-    padding: 15px 8px;
+    padding: 12px 8px;
   }
 
   .footer h1 {
@@ -813,7 +858,7 @@ input[type="radio"]:checked + label.correct {
   }
 }
 
-/* Very small screens */
+/* Mobile Extra Small - 320px */
 @media screen and (max-width: 320px) {
   .header {
     padding: 8px;
@@ -821,29 +866,24 @@ input[type="radio"]:checked + label.correct {
   }
 
   .Logo img {
-    margin-bottom: 8px;
+    width: 70px;
+    margin-bottom: 5px;
   }
 
   .Sections {
     font-size: 11px;
-    padding: 8px 12px;
+    padding: 6px 10px;
     margin: 1px 0;
-    width: 100%;
-    max-width: 220px;
-    text-align: center;
-    display: block;
+    max-width: 200px;
   }
 
   .Sections img {
     width: 30px;
-    margin-left: 5px;
-    vertical-align: middle;
+    margin-left: 4px;
   }
 
-  .Sections p {
-    margin: 0;
-    display: inline;
-    vertical-align: middle;
+  .homepage-banner {
+    padding: 15px 6px;
   }
 
   .homepage-banner h2,
@@ -855,14 +895,27 @@ input[type="radio"]:checked + label.correct {
     font-size: 13px;
   }
 
+  .homepage-banner .buttons a {
+    padding: 6px 12px;
+    font-size: 11px;
+    max-width: 200px;
+  }
+
   .Logo-Image img {
-    width: 200px;
+    width: 180px;
+  }
+
+  .section,
+  .section-reverse {
+    padding: 10px 6px;
+    gap: 10px;
+    font-size: 13px;
   }
 
   .image-left img,
   .image-right img,
   .toba {
-    max-width: 200px;
+    max-width: 180px;
   }
 
   .text-right h2,
@@ -879,6 +932,7 @@ input[type="radio"]:checked + label.correct {
   .information-2 {
     font-size: 12px;
     padding: 10px;
+    min-height: 100px;
   }
 
   .footer h1 {
@@ -895,71 +949,11 @@ input[type="radio"]:checked + label.correct {
 
   label {
     font-size: 11px;
-    padding: 7px;
+    padding: 6px;
   }
 
   .text-center {
     font-size: 13px;
-  }
-}
-/* Enhanced Responsive Design for Tablets and iPads */
-@media screen and (max-width: 1200px) {
-  .Sections {
-    font-size: 16px;
-    gap: 15px;
-  }
-
-  .text-right,
-  .text-left {
-    width: 480px;
-  }
-
-  .image-left img,
-  .image-right img {
-    width: 380px;
-  }
-}
-
-/* iPad Pro and Large Tablets */
-@media screen and (max-width: 1024px) and (orientation: portrait) {
-  .header {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .section,
-  .section-reverse {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-    gap: 30px;
-  }
-
-  .text-right,
-  .text-left {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .image-left img,
-  .image-right img {
-    width: 100%;
-    max-width: 500px;
-    margin: 20px auto;
-  }
-
-  .information {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .information-1,
-  .information-2 {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    padding: 10px 6px;
   }
 }
